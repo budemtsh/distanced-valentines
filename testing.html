@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Sniffer 💌</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Comic Sans MS", "Poppins", cursive, sans-serif;
+        background: linear-gradient(135deg, #ffd6e8, #ffe9f3, #fff6fb);
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .container {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #ff4d88;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        color: #ff6699;
+        margin-bottom: 30px;
+    }
+
+    .message {
+        background: rgba(255,255,255,0.8);
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .little-note {
+        margin-top: 30px;
+        font-size: 1rem;
+        color: #cc3366;
+        opacity: 0.9;
+    }
+
+    .heart {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: #ff4d88;
+        transform: rotate(45deg);
+        animation: float 8s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #ff4d88;
+        border-radius: 50%;
+    }
+
+    .heart::before {
+        top: -10px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: -10px;
+        top: 0;
+    }
+
+    @keyframes float {
+        0% {
+            bottom: -50px;
+            opacity: 1;
+        }
+        100% {
+            bottom: 100%;
+            opacity: 0;
+            transform: translateX(100px) rotate(360deg);
+        }
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        background-color: #ff4d88;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #ff1a66;
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: #aa3366;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine’s Day, Sniffer 💕</h1>
+    <h2>Enjoy Taiwan on Valentine's Day!</h2>
+
+    <div class="message">
+        Take your mummy out somewhere nice and get her flowers! 🌸💐  
+        Make her smile extra big today, okay?  
+
+        <br><br>
+
+        Even though I'm far away, I'm thinking of you in Taiwan 🥺  
+        I hope your day is warm, sweet, and full of little happy moments.  
+
+        <br><br>
+
+        Just imagine I'm there poking you and stealing your fries 😌🍟  
+        Distance is temporary — but my love for you is permanent. 💗
+    </div>
+
+    <button onclick="showLove()">Click for a kiss 💋</button>
+
+    <div class="little-note" id="secretNote" style="display:none;">
+        Surprise!! Sending you the tightest long-distance hug ever 🤗  
+        I’m so proud of you always. Don’t forget to miss me a little extra today 💌
+    </div>
+
+    <footer>
+        Made with too much love 💞 from across the sea 🌊
+    </footer>
+</div>
+
+<script>
+    function showLove() {
+        document.getElementById("secretNote").style.display = "block";
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+
+    setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
